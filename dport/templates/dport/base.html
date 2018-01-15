@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'dport/styles.css' %}" />
+    <link type="text/css" rel="stylesheet" href="css/magnific-popup.css" />
+    {% comment %} <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css"> {% endcomment %}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Portfolio of Dan Cohen</title>
+</head>
+
+<body onload="workLoad();">
+    <script src="js/functions.js"></script>
+    <div class="bodydiv">
+        <div id="navdiv">
+            <nav>
+                <ul class="topnav">
+                    <li><a href="/">Dan Cohen</a></li>
+                    <li><a href="work">Work</a></li>
+                    <li><a href="cv">CV</a></li>
+                    <li><a href="contact">Contact</a></li>
+                    <li class="icon">
+                        <a href="javascript:void(0);" onclick="responsiveToggle()">☰</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    {% block content %}{% endblock content %}
+</body>
+
+</html>
