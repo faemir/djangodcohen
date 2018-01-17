@@ -11,8 +11,9 @@ class ProjectAdmin(admin.ModelAdmin):
         models.TextField: {'widget': TinyMCE(attrs={'cols': 80, 'rows': 20,}, )},
     }
     fieldsets = [
-        ('Project title',    {'fields': ['title']}),
-        ('Description', {'fields': ['description']}),
+        ('',    {'fields': ['title']}),
+        ('',    {'fields': ['proj_id']}),
+        ('', {'fields': ['description']}),
         ('Date information', {'fields': ['pub_date']}),
     ]
     list_display = ('title', 'pub_date', 'was_published_recently')

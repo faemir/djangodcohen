@@ -1,14 +1,24 @@
 {% extends "dport/base.html" %}
+{% load static %} 
 {% block content %}
         <div class="allTiles">
             <div class="tileGroup">
                 <div class="featTile">
-                    <a href="#fypTXT" onclick="contentToggleFYP();">
-                        <figure><img src="img/fyp/fyphover.png" alt="pic" /><img src="img/fyp/fypthumb.jpg" alt="pic" /></figure>
+                    <a href="#featTXT" onclick="contentToggleFEAT();">
+                        {% with hover_static="dport/images/"|add:feat_proj.proj_id|add:"/"|add:feat_proj.proj_id|add:"hover.png" thumb_static="dport/images/"|add:feat_proj.proj_id|add:"/"|add:feat_proj.proj_id|add:"thumb.jpg"%}
+                        <figure><img src="{% static hover_static %}" alt="pic" /><img src="{% static thumb_static %}" alt="pic" /></figure>
+                        {% endwith %}
                     </a>
                 </div>
             </div>
             <div class="tileGroup">
+                {% for grid in gridcount %}
+                <div class="innerTile">
+                        <a href="#tvtTXT" onclick="contentToggleTVT();">
+                            <figure><img src="img/tvt/tvtthumb.jpg" alt="pic" /><img src="img/tvt/tvthover.png" alt="pic" /></figure>
+                        </a>
+                    </div>
+                {% endfor %}
                 <div class="innerTile">
                     <a href="#tvtTXT" onclick="contentToggleTVT();">
                         <figure><img src="img/tvt/tvtthumb.jpg" alt="pic" /><img src="img/tvt/tvthover.png" alt="pic" /></figure>
@@ -36,29 +46,29 @@
         <div id="unselTXT" class="projTXT">
             <p class="centerp">Above are several of my most recent projects - click on them to find out more.</p>
         </div>
-        <div id="fypTXT" class="projTXT hidden">
-            <div class="fyptitle">
+        <div id="featTXT" class="projTXT hidden">
+            <div class="feattitle">
                 <h2>BSc Final Year Project - Procedural Racing Game</h2>
             </div>
             <div class="projmedia">
-                <a href="#fyp-popup" class="open-popup-link">
+                <a href="#feat-popup" class="open-popup-link">
                     <video autoplay loop poster="img/fyp/fypposter.jpg" preload="auto" class="projthumb">
                         <source src="img/fyp/fypthumb.webm" type="video/webm">
                         <source src="img/fyp/fypthumb.mp4" type="video/mp4" />
                     </video>
                 </a>
-                <div id="fyp-popup" class="white-popup mfp-hide">
+                <div id="feat-popup" class="white-popup mfp-hide">
                     <video class="gameplayvid" loop preload="none">
                         <source src="img/fyp/fyp.webm" type="video/webm">
                         <source src="img/fyp/fyp.mp4" type="video/mp4" />
                     </video>
                 </div>
-                <div class="fypgallery">
+                <div class="featgallery">
                     <a class="thumbimg" href="img/fyp/fyp2.jpg">
                         <img class="projthumb" src="img/fyp/fyp2thumb.jpg" alt="fyp picture 2" />
                     </a>
                 </div>
-                <div class="fypgallery">
+                <div class="featgallery">
                     <a class="thumbimg" href="img/fyp/fyp3.jpg">
                         <img class="projthumb" src="img/fyp/fyp3thumb.jpg" alt="fyp picture 3" />
                     </a>

@@ -5,6 +5,7 @@ from django.utils import timezone
 
 class Project(models.Model):
     title = models.CharField(max_length = 50)
+    proj_id = models.CharField(max_length = 3)
     pub_date = models.DateTimeField('date published')
     description = models.TextField()
 
