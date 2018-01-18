@@ -1,19 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
-    {% load static %}
+    
 
     <link rel="stylesheet" type="text/css" href="{% static 'dport/styles.css' %}" />
     <link type="text/css" rel="stylesheet" href="css/magnific-popup.css" />
-    {% comment %} <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css"> {% endcomment %}
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Portfolio of Dan Cohen</title>
 </head>
 
 <body onload="workLoad();">
-    <script src="js/functions.js"></script>
+    <script src="{% static 'dport/js/functions.js' %}"></script>
     <div class="bodydiv">
         <div id="navdiv">
             <nav>
