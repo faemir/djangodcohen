@@ -12,12 +12,14 @@
                 </div>
             </div>
             <div class="tileGroup">
-                {% for grid in gridcount %}
+                {% for proj in projects %}
                 <div class="innerTile">
-                        <a href="#tvtTXT" onclick="contentToggleTVT();">
-                            <figure><img src="img/tvt/tvtthumb.jpg" alt="pic" /><img src="img/tvt/tvthover.png" alt="pic" /></figure>
-                        </a>
-                    </div>
+                        {% with hover_static="dport/images/"|add:proj.proj_id|add:"/"|add:proj.proj_id|add:"hover.png" thumb_static="dport/images/"|add:proj.proj_id|add:"/"|add:proj.proj_id|add:"thumb.jpg"%}
+                    <a href="#{{proj.proj_id}}TXT" onclick="contentToggle{{proj.proj_id|upper}}();">
+                        <figure><img src="{% static thumb_static %}" alt="pic" /><img src="{% static hover_static %}" alt="pic" /></figure>
+                    </a>
+                    {% endwith %}
+                </div>
                 {% endfor %}
                 <div class="innerTile">
                     <a href="#tvtTXT" onclick="contentToggleTVT();">
