@@ -14,33 +14,13 @@
             <div class="tileGroup">
                 {% for proj in projects %}
                 <div class="innerTile">
-                        {% with hover_static="dport/images/"|add:proj.proj_id|add:"/"|add:proj.proj_id|add:"hover.png" thumb_static="dport/images/"|add:proj.proj_id|add:"/"|add:proj.proj_id|add:"thumb.jpg"%}
+                    {% with hover_static="dport/images/"|add:proj.proj_id|add:"/"|add:proj.proj_id|add:"hover.png" thumb_static="dport/images/"|add:proj.proj_id|add:"/"|add:proj.proj_id|add:"thumb.jpg"%}
                     <a href="#{{proj.proj_id}}TXT" onclick="contentToggle{{proj.proj_id|upper}}();">
                         <figure><img src="{% static thumb_static %}" alt="pic" /><img src="{% static hover_static %}" alt="pic" /></figure>
                     </a>
                     {% endwith %}
                 </div>
                 {% endfor %}
-                <div class="innerTile">
-                    <a href="#tvtTXT" onclick="contentToggleTVT();">
-                        <figure><img src="img/tvt/tvtthumb.jpg" alt="pic" /><img src="img/tvt/tvthover.png" alt="pic" /></figure>
-                    </a>
-                </div>
-                <div class="innerTile">
-                    <a href="#rmhTXT" onclick="contentToggleRMH();">
-                        <figure><img src="img/rmh/rmhthumb.jpg" alt="pic" /><img src="img/rmh/rmhhover.png" alt="pic" /></figure>
-                    </a>
-                </div>
-                <div class="innerTile">
-                    <a href="#acsTXT" onclick="contentToggleACS();">
-                        <figure><img src="img/acs/acsthumb.jpg" alt="pic" /><img src="img/acs/acshover2.png" alt="pic" /></figure>
-                    </a>
-                </div>
-                <div class="innerTile">
-                    <a href="#fcTXT" onclick="contentToggleFC();">
-                        <figure><img src="img/fc/fcthumb.jpg" alt="pic" /><img src="img/fc/fchover.png" alt="pic" /></figure>
-                    </a>
-                </div>
             </div>
         </div>
     </div>
@@ -50,213 +30,71 @@
         </div>
         <div id="featTXT" class="projTXT hidden">
             <div class="feattitle">
-                <h2>BSc Final Year Project - Procedural Racing Game</h2>
+                <h2>{{feat_proj.title}}</h2>
             </div>
             <div class="projmedia">
                 <a href="#feat-popup" class="open-popup-link">
-                    <video autoplay loop poster="img/fyp/fypposter.jpg" preload="auto" class="projthumb">
-                        <source src="img/fyp/fypthumb.webm" type="video/webm">
-                        <source src="img/fyp/fypthumb.mp4" type="video/mp4" />
+                    <video autoplay loop poster="img/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}poster.jpg" preload="auto" class="projthumb">
+                        <source src="img/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}thumb.webm" type="video/webm">
+                        <source src="img/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}thumb.mp4" type="video/mp4" />
                     </video>
                 </a>
                 <div id="feat-popup" class="white-popup mfp-hide">
                     <video class="gameplayvid" loop preload="none">
-                        <source src="img/fyp/fyp.webm" type="video/webm">
-                        <source src="img/fyp/fyp.mp4" type="video/mp4" />
+                        <source src="img/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}.webm" type="video/webm">
+                        <source src="img/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}.mp4" type="video/mp4" />
                     </video>
                 </div>
                 <div class="featgallery">
-                    <a class="thumbimg" href="img/fyp/fyp2.jpg">
-                        <img class="projthumb" src="img/fyp/fyp2thumb.jpg" alt="fyp picture 2" />
+                    <a class="thumbimg" href="img/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}2.jpg">
+                        <img class="projthumb" src="img/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}2thumb.jpg" alt="{{feat_proj.proj_id}} picture 2" />
                     </a>
                 </div>
                 <div class="featgallery">
-                    <a class="thumbimg" href="img/fyp/fyp3.jpg">
-                        <img class="projthumb" src="img/fyp/fyp3thumb.jpg" alt="fyp picture 3" />
+                    <a class="thumbimg" href="img/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}3.jpg">
+                        <img class="projthumb" src="img/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}3thumb.jpg" alt="{{feat_proj.proj_id}} picture 3" />
                     </a>
-                    <a class="thumbimg" href="img/fyp/fyp4.jpg">
-                        <img class="projthumb" src="img/fyp/fyp4thumb.jpg" alt="fyp picture 4" />
+                    <a class="thumbimg" href="img/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}4.jpg">
+                        <img class="projthumb" src="img/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}4thumb.jpg" alt="{{feat_proj.proj_id}} picture 4" />
                     </a>
                 </div>
             </div>
-            <p>For my final year project, I created a futuristic racing game in Unreal Engine 4 with C++. The focus of the project was to explore fiscal reduction using procedural content generation and a dynamic difficulty which would impact said generation.</p>
-            <p>Players must race against the clock going from checkpoint to checkpoint. The race track is spawned in front of them, in accordance to the ability of the player which is analysed in real-time as they play the game.</p>
-            <p>This project was almost all my own work, including:</p>
-            <ul>
-                <li>Gameplay and visual design</li>
-                <li>Track generation using B-splines</li>
-                <li>Difficulty manager</li>
-                <li>Vehicle control/handling</li>
-                <li>UI</li>
-            </ul>
+            {{feat_proj.description|safe}}
         </div>
-        <div id="tvtTXT" class="projTXT hidden">
-            <h2>TV Trouble (Feb 2016 Jam)</h2>
-            <p>Download a build or see more of the game on <a href="https://supercore.itch.io/tvtrouble">itch.io</a>.</p>
+        {% for proj in projects %}
+        <div id="{{proj.proj_id}}TXT" class="projTXT hidden">
+            <h2>{{proj.title}}</h2>
             <div class="projmedia">
-                <a href="#tvt-popup" class="open-popup-link">
-                    <video autoplay loop poster="img/tvt/tvtposter.jpg" preload="auto" class="projthumb">
-                        <source src="img/tvt/tvt1thumb.webm" type="video/webm">
-                        <source src="img/tvt/tvt1thumb.mp4" type="video/mp4" />
+                <a href="#{{proj.proj_id}}-popup" class="open-popup-link">
+                    <video autoplay loop poster="img/{{proj.proj_id}}/{{proj.proj_id}}poster.jpg" preload="auto" class="projthumb">
+                        <source src="img/{{proj.proj_id}}/{{proj.proj_id}}1thumb.webm" type="video/webm">
+                        <source src="img/{{proj.proj_id}}/{{proj.proj_id}}1thumb.mp4" type="video/mp4" />
                     </video>
                 </a>
-                <div id="tvt-popup" class="white-popup mfp-hide">
+                <div id="{{proj.proj_id}}-popup" class="white-popup mfp-hide">
                     <video class="gameplayvid" loop preload="none">
-                        <source src="img/tvt/tvt1.webm" type="video/webm">
-                        <source src="img/tvt/tvt1.mp4" type="video/mp4" />
+                        <source src="img/{{proj.proj_id}}/{{proj.proj_id}}1.webm" type="video/webm">
+                        <source src="img/{{proj.proj_id}}/{{proj.proj_id}}1.mp4" type="video/mp4" />
                     </video>
                 </div>
-                <div class="tvtgallery">
-                    <a class="thumbimg" href="img/tvt/tvt2.jpg">
-                        <img class="projthumb" src="img/tvt/tvt2thumb.jpg" alt="TVT Trouble 2" />
+                <div class="{{proj.proj_id}}gallery">
+                    <a class="thumbimg" href="img/{{proj.proj_id}}/{{proj.proj_id}}2.jpg">
+                        <img class="projthumb" src="img/{{proj.proj_id}}/{{proj.proj_id}}2thumb.jpg" alt="{{proj.proj_id}} Trouble 2" />
                     </a>
                 </div>
-                <div class="tvtgallery">
-                    <a class="thumbimg" href="img/tvt/tvt3.jpg">
-                        <img class="projthumb" src="img/tvt/tvt3thumb.jpg" alt="TVT Trouble 3" />
+                <div class="{{proj.proj_id}}gallery">
+                    <a class="thumbimg" href="img/{{proj.proj_id}}/{{proj.proj_id}}3.jpg">
+                        <img class="projthumb" src="img/{{proj.proj_id}}/{{proj.proj_id}}3thumb.jpg" alt="{{proj.proj_id}} Trouble 3" />
                     </a>
-                    <a class="thumbimg" href="img/tvt/tvt4.jpg">
-                        <img class="projthumb" src="img/tvt/tvt4thumb.jpg" alt="TVT Trouble 4" />
+                    <a class="thumbimg" href="img/{{proj.proj_id}}/{{proj.proj_id}}4.jpg">
+                        <img class="projthumb" src="img/{{proj.proj_id}}/{{proj.proj_id}}4thumb.jpg" alt="{{proj.proj_id}} Trouble 4" />
                     </a>
                 </div>
             </div>
-            <p class="boldp">The year is 1967 and you are a TV repair person. Get to work.</p>
-            <p>Tune in and repair as many televisions as you can against the clock. Earn bonus points for speedy and efficient work.</p>
-            <p>This jam evolved as a stylistic take on the common mini-game of opening or unlocking doors in RPGs or action titles. It received positive attention from both <a href="
-            https://www.rockpapershotgun.com/2016/03/05/best-free-games-of-the-week-14/">Rock Paper Shotgun</a> and <a href="
-            http://games.softpedia.com/get/Freeware-Games/TV-Trouble.shtml">
-            Softpedia</a>.</p>
-            <p>My main work in the jam included:</p>
-            <ul>
-                <li>Round timing</li>
-                <li>Logic for the aerial, buttons and dials</li>
-                <li>3D Models</li>
-            </ul>
+            {{proj.description|safe}}
         </div>
-        <div id="rmhTXT" class="projTXT hidden">
-            <h2>Robo Monster Hunt (Ludum Dare 33 Jam)</h2>
-            <p>Download a build or see more of the game on <a href="https://supercore.itch.io/robo-monster-hunt">itch.io</a>.</p>
-            <div class="projmedia">
-                <a href="#rmh-popup" class="open-popup-link">
-                    <video autoplay loop poster="img/rmh/rmhposter.jpg" preload="auto" class="projthumb">
-                        <source src="img/rmh/rmhthumb.mp4" type="video/mp4" />
-                        <source src="img/rmh/rmhthumb.webm" type="video/webm">
-                    </video>
-                </a>
-                <div id="rmh-popup" class="white-popup mfp-hide">
-                    <video class="gameplayvid" loop preload="none">
-                        <source src="img/rmh/rmh.webm" type="video/webm">
-                        <source src="img/rmh/rmh.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                <div class="rmhgallery">
-                    <a class="thumbimg" href="img/rmh/rmh2.jpg">
-                        <img class="projthumb" src="img/rmh/rmh2thumb.jpg" alt="fyp picture 2" />
-                    </a>
-                </div>
-                <div class="rmhgallery">
-                    <a class="thumbimg" href="img/rmh/rmh3.jpg">
-                        <img class="projthumb" src="img/rmh/rmh3thumb.jpg" alt="fyp picture 3" />
-                    </a>
-                    <a class="thumbimg" href="img/rmh/rmh4.jpg">
-                        <img class="projthumb" src="img/rmh/rmh4thumb.jpg" alt="fyp picture 4" />
-                    </a>
-                </div>
-            </div>
-            <p class="boldp">You are an evil robotic wolf stealing from equally insufferable robotic farmers.</p>
-            <p>For this jam I wanted to create a isometric patrol-based stealth game, where the aim is to collect all the sheep in the level while avoiding the farmers keen shotgun aim as they patrol the fields, riffing off the familiar trope of wolves taking
-                sheep.
-            </p>
-            <p>I experimented with a waypoint system and unreal engine's AI system for this jam, as well as the challenge of creating compelling stealth levels.
-            </p>
-            <p>My main work in the jam included:</p>
-            <ul>
-                <li>Game design</li>
-                <li>map design</li>
-                <li>Player movement</li>
-                <li>Farmer model / animation</li>
-            </ul>
-        </div>
-        <div id="acsTXT" class="projTXT hidden">
-            <h2>Alien Cow Snatchers (Sep 2015 jam)</h2>
-            <p>Download a build or see more of the game on <a href="https://supercore.itch.io/alien-cow-snatchers">itch.io</a>.</p>
-            <div class="projmedia">
-                <a href="#acs-popup" class="open-popup-link">
-                    <video autoplay loop poster="img/acs/acsposter.jpg" preload="auto" class="projthumb">
-                        <source src="img/acs/acsthumb.mp4" type="video/mp4" />
-                        <source src="img/acs/acsthumb.webm" type="video/webm">
-                    </video>
-                </a>
-                <div id="acs-popup" class="white-popup mfp-hide">
-                    <video class="gameplayvid" loop preload="none">
-                        <source src="img/acs/acs.webm" type="video/webm">
-                        <source src="img/acs/acs.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                <div class="acsgallery">
-                    <a class="thumbimg" href="img/acs/acs2.jpg">
-                        <img class="projthumb" src="img/acs/acs2thumb.jpg" alt="alien cow snatchers screenshot" />
-                    </a>
-                </div>
-                <div class="acsgallery">
-                    <a class="thumbimg" href="img/acs/acs3.jpg">
-                        <img class="projthumb" src="img/acs/acs3thumb.jpg" alt="alien cow snatchers screenshot" />
-                    </a>
-                    <a class="thumbimg" href="img/acs/acs4.jpg">
-                        <img class="projthumb" src="img/acs/acs4thumb.jpg" alt="alien cow snatchers screenshot" />
-                    </a>
-                </div>
-            </div>
-            <p class="boldp">Grab a friend and abduct animals with your UFO.</p>
-            <p>This jam focused on exploring local co-op functionality in UE4.</p>
-            <p>My main work in the jam included:</p>
-            <ul>
-                <li>3D models</li>
-                <li>UI / menus</li>
-                <li>UE4 skeletal meshes</li>
-            </ul>
-        </div>
-        <div id="fcTXT" class="projTXT hidden">
-            <h2>Futile Coda (April 2014 jam)</h2>
-            <p>Download a build or see more of the game on <a href="https://supercore.itch.io/futilecoda?secret=o2jYlxLr2pRpXfGqdBeOsi4o">itch.io</a>.</p>
+        {% endfor %}
 
-            <div class="projmedia">
-                <a href="#fc-popup" class="open-popup-link">
-                    <video autoplay loop poster="img/fc/fcposter.jpg" preload="auto" class="projthumb">
-                        <source src="img/fc/fcthumb.mp4" type="video/mp4" />
-                        <source src="img/fc/fcthumb.webm" type="video/webm">
-                    </video>
-                </a>
-                <div id="fc-popup" class="white-popup mfp-hide">
-                    <video class="gameplayvid" loop preload="none">
-                        <source src="img/fc/fc.webm" type="video/webm">
-                        <source src="img/fc/fc.mp4" type="video/mp4" />
-                    </video>
-                </div>
-                <div class="fcgallery">
-                    <a class="thumbimg" href="img/fc/fc2.jpg">
-                        <img class="projthumb" src="img/fc/fc2thumb.jpg" alt="fyp picture 2" />
-                    </a>
-                </div>
-                <div class="fcgallery">
-                    <a class="thumbimg" href="img/fc/fc3.jpg">
-                        <img class="projthumb" src="img/fc/fc3thumb.jpg" alt="fyp picture 3" />
-                    </a>
-                    <a class="thumbimg" href="img/fc/fc4.jpg">
-                        <img class="projthumb" src="img/fc/fc4thumb.jpg" alt="fyp picture 4" />
-                    </a>
-                </div>
-            </div>
-            <p class="boldp">Winning is futile, try to survive.</p>
-            <p>For this jam I wanted to combine the concept of horde mode from Gears of War with a retro pseudo-3D look from the original Doom. We wanted to focus on weapons that weren't hit-scan, including a flak-shotgun and (very large) laser. Waves of
-                hand-animated enemies spawn in increasing amounts while the player fends for as long as they can.</p>
-            <p>My main work in the jam included:</p>
-            <ul>
-                <li>Game design</li>
-                <li>Map model and design</li>
-                <li>Sound and animation code</li>
-            </ul>
-        </div>
         <div id="scTXT" class="projTXT hidden">
             <h2>SUPERCORE</h2>
             <p>More of our projects can be found at <a href="http://supercore.itch.io">supercore.itch.io</a>.</p>
