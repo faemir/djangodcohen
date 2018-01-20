@@ -5,20 +5,22 @@
             <div class="tileGroup">
                 <div class="featTile">
                     <a href="#featTXT" onclick="contentToggleFEAT();">
-                        {% with hover_static="dport/images/"|add:feat_proj.proj_id|add:"/"|add:feat_proj.proj_id|add:"hover.png" thumb_static="dport/images/"|add:feat_proj.proj_id|add:"/"|add:feat_proj.proj_id|add:"thumb.jpg"%}
-                        <figure><img src="{% static hover_static %}" alt="pic" /><img src="{% static thumb_static %}" alt="pic" /></figure>
-                        {% endwith %}
+                        <figure>
+                            <img src="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'hover.png' %}" alt="pic" />
+                            <img src="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'thumb.jpg' %}" alt="pic" />
+                        </figure>
                     </a>
                 </div>
             </div>
             <div class="tileGroup">
                 {% for proj in projects %}
                 <div class="innerTile">
-                    {% with hover_static="dport/images/"|add:proj.proj_id|add:"/"|add:proj.proj_id|add:"hover.png" thumb_static="dport/images/"|add:proj.proj_id|add:"/"|add:proj.proj_id|add:"thumb.jpg"%}
                     <a href="#{{proj.proj_id}}TXT" onclick="contentToggle{{proj.proj_id|upper}}();">
-                        <figure><img src="{% static thumb_static %}" alt="pic" /><img src="{% static hover_static %}" alt="pic" /></figure>
+                        <figure>
+                            <img src="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'thumb.jpg' %}" alt="pic" />
+                            <img src="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'hover.png' %}" alt="pic" />
+                        </figure>
                     </a>
-                    {% endwith %}
                 </div>
                 {% endfor %}
             </div>
