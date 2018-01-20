@@ -34,28 +34,28 @@
             </div>
             <div class="projmedia">
                 <a href="#feat-popup" class="open-popup-link">
-                    <video autoplay loop poster="{% static dport/images/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}poster.jpg %}" preload="auto" class="projthumb">
-                        <source src="{% static dport/images/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}thumb.webm %}" type="video/webm">
-                        <source src="{% static dport/images/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}thumb.mp4 %}" type="video/mp4" />
+                    <video autoplay loop poster="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'poster.jpg' %}" preload="auto" class="projthumb">
+                        <source src="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'thumb.webm' %}" type="video/webm">
+                        <source src="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'thumb.mp4' %}" type="video/mp4" />
                     </video>
                 </a>
                 <div id="feat-popup" class="white-popup mfp-hide">
                     <video class="gameplayvid" loop preload="none">
-                        <source src="{% static dport/images/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}.webm %}" type="video/webm">
-                        <source src="{% static dport/images/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}.mp4 %}" type="video/mp4" />
+                        <source src="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'.webm' %}" type="video/webm">
+                        <source src="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'.mp4' %}" type="video/mp4" />
                     </video>
                 </div>
                 <div class="featgallery">
-                    <a class="thumbimg" href="{% static dport/images/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}2.jpg %}">
-                        <img class="projthumb" src="{% static dport/images/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}2thumb.jpg %}" alt="{{feat_proj.proj_id}} picture 2" />
+                    <a class="thumbimg" href="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'2.jpg' %}">
+                        <img class="projthumb" src="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'2thumb.jpg' %}" alt="{{feat_proj.proj_id}} picture 2" />
                     </a>
                 </div>
                 <div class="featgallery">
-                    <a class="thumbimg" href="{% static dport/images/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}3.jpg %}">
-                        <img class="projthumb" src="{% static dport/images/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}3thumb.jpg %}" alt="{{feat_proj.proj_id}} picture 3" />
+                    <a class="thumbimg" href="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'3.jpg' %}">
+                        <img class="projthumb" src="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'3thumb.jpg' %}" alt="{{feat_proj.proj_id}} picture 3" />
                     </a>
-                    <a class="thumbimg" href="{% static dport/images/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}4.jpg %}">
-                        <img class="projthumb" src="{% static dport/images/{{feat_proj.proj_id}}/{{feat_proj.proj_id}}4thumb.jpg %}" alt="{{feat_proj.proj_id}} picture 4" />
+                    <a class="thumbimg" href="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'4.jpg' %}">
+                        <img class="projthumb" src="{% static 'dport/images/'|add:feat_proj.proj_id|add:'/'|add:feat_proj.proj_id|add:'4thumb.jpg' %}" alt="{{feat_proj.proj_id}} picture 4" />
                     </a>
                 </div>
             </div>
@@ -66,28 +66,28 @@
             <h2>{{proj.title}}</h2>
             <div class="projmedia">
                 <a href="#{{proj.proj_id}}-popup" class="open-popup-link">
-                    <video autoplay loop poster="{% static dport/images/{{proj.proj_id}}/{{proj.proj_id}}poster.jpg %}" preload="auto" class="projthumb">
-                        <source src="{% static dport/images/{{proj.proj_id}}/{{proj.proj_id}}1thumb.webm %}" type="video/webm">
-                        <source src="{% static dport/images/{{proj.proj_id}}/{{proj.proj_id}}1thumb.mp4 %}" type="video/mp4" />
+                    <video autoplay loop poster="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'poster.jpg' %}" preload="auto" class="projthumb">
+                        <source src="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'1thumb.webm' %}" type="video/webm">
+                        <source src="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'1thumb.mp4' %}" type="video/mp4" />
                     </video>
                 </a>
                 <div id="{{proj.proj_id}}-popup" class="white-popup mfp-hide">
                     <video class="gameplayvid" loop preload="none">
-                        <source src="{% static dport/images/{{proj.proj_id}}/{{proj.proj_id}}1.webm %}" type="video/webm">
-                        <source src="{% static dport/images/{{proj.proj_id}}/{{proj.proj_id}}1.mp4 %}" type="video/mp4" />
+                        <source src="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'1.webm' %}" type="video/webm">
+                        <source src="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'1.mp4' %}" type="video/mp4" />
                     </video>
                 </div>
                 <div class="{{proj.proj_id}}gallery">
-                    <a class="thumbimg" href="{% static dport/images/{{proj.proj_id}}/{{proj.proj_id}}2.jpg %}">
-                        <img class="projthumb" src="{% static dport/images/{{proj.proj_id}}/{{proj.proj_id}}2thumb.jpg %}" alt="{{proj.proj_id}} Trouble 2" />
+                    <a class="thumbimg" href="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'2.jpg' %}">
+                        <img class="projthumb" src="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'2thumb.jpg' %}" alt="{{proj.proj_id}} Trouble 2" />
                     </a>
                 </div>
                 <div class="{{proj.proj_id}}gallery">
-                    <a class="thumbimg" href="{% static dport/images/{{proj.proj_id}}/{{proj.proj_id}}3.jpg">
-                        <img class="projthumb" src="{% static dport/images/{{proj.proj_id}}/{{proj.proj_id}}3thumb.jpg %}" alt="{{proj.proj_id}} Trouble 3" />
+                    <a class="thumbimg" href="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'3.jpg' %}">
+                        <img class="projthumb" src="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'3thumb.jpg' %}" alt="{{proj.proj_id}} Trouble 3" />
                     </a>
-                    <a class="thumbimg" href="{% static dport/images/{{proj.proj_id}}/{{proj.proj_id}}4.jpg">
-                        <img class="projthumb" src="{% static dport/images/{{proj.proj_id}}/{{proj.proj_id}}4thumb.jpg %}" alt="{{proj.proj_id}} Trouble 4" />
+                    <a class="thumbimg" href="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'4.jpg' %}">
+                        <img class="projthumb" src="{% static 'dport/images/'|add:proj.proj_id|add:'/'|add:proj.proj_id|add:'4thumb.jpg' %}" alt="{{proj.proj_id}} Trouble 4" />
                     </a>
                 </div>
             </div>
